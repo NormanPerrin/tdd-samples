@@ -9,6 +9,10 @@ class Dollar {
     times(multiplier: number) {
         return new Dollar(this.amount * multiplier);
     }
+
+    equals(_dollar: Dollar) {
+        return true;
+    }
 }
 
 export default Dollar;
