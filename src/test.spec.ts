@@ -15,4 +15,8 @@ describe('money exchange', () => {
         expect(ten.amount).toEqual(10);
         expect(twenty.amount).toEqual(20);
     });
+
+    it('should be comparable by .equal', () => {
+        expect(new Dollar(5).equals(new Dollar(5))).toBe(true);
+    });
 });
