@@ -1,6 +1,6 @@
 
 class Dollar {
-    amount: number;
+    private amount: number;
 
     constructor(amount: number) {
         this.amount = amount;
