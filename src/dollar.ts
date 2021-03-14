@@ -1,16 +1,12 @@
-class Dollar {
-    private amount: number;
+import Money from './money';
 
-    constructor(amount: number) {
-        this.amount = amount;
-    }
-
+class Dollar extends Money {
     times(multiplier: number) {
         return new Dollar(this.amount * multiplier);
     }
 
     equals(dollar: Dollar) {
-        return this.amount === dollar.amount;
+        return super.equals(dollar);
     }
 }
 

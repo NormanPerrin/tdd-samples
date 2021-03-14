@@ -1,5 +1,5 @@
-import Dollar from "./dollar";
-import Franc from "./franc";
+import Dollar from './dollar';
+import Franc from './franc';
 
 describe('money exchange', () => {
     describe('dollar', () => {
