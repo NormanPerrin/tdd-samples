@@ -3,17 +3,13 @@ import Dollar from "./dollar";
 describe('money exchange', () => {
     it('should be able to multiply a currency', () => {
         const five = new Dollar(5);
-        expect(five.times(2).amount).toEqual(10);
+        expect(five.times(2).equals(new Dollar(10))).toBe(true);
     });
 
     it('should not change the object', () => {
-        const five = new Dollar(5),
-            ten = five.times(2),
-            twenty = ten.times(2);
-
-        expect(five.amount).toEqual(5);
-        expect(ten.amount).toEqual(10);
-        expect(twenty.amount).toEqual(20);
+        const five = new Dollar(5);
+        expect(new Dollar(10).equals(five.times(2))).toBe(true);
+        expect(new Dollar(15).equals(five.times(3))).toBe(true);
     });
 
     it('should be comparable by .equal', () => {
