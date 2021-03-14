@@ -1,4 +1,3 @@
-
 class Dollar {
     private amount: number;
 
