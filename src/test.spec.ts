@@ -37,3 +37,13 @@ describe('money exchange', () => {
         });
     });
 });
+
+describe('currency', () => {
+    it('should return \'USD\' for the currency attribute in dollar', () => {
+        expect(Money.dollar(0).currency).toBe('USD');
+    });
+
+    it('should return \'CHF\' for the currency attribute in franc', () => {
+        expect(Money.franc(0).currency).toBe('CHF');
+    });
+});
