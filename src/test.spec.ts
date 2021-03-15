@@ -1,40 +1,39 @@
-import Dollar from './dollar';
-import Franc from './franc';
+import Money from './money';
 
 describe('money exchange', () => {
     describe('dollar', () => {
         it('should be able to multiply a currency', () => {
-            const five = new Dollar(5);
-            expect(five.times(2).equals(new Dollar(10))).toBe(true);
+            const five = Money.dollar(5);
+            expect(five.times(2).equals(Money.dollar(10))).toBe(true);
         });
 
         it('should not change the object', () => {
-            const five = new Dollar(5);
-            expect(new Dollar(10).equals(five.times(2))).toBe(true);
-            expect(new Dollar(15).equals(five.times(3))).toBe(true);
+            const five = Money.dollar(5);
+            expect(five.times(2).equals(Money.dollar(10))).toBe(true);
+            expect(five.times(3).equals(Money.dollar(10))).toBe(true);
         });
 
         it('should be comparable by .equal', () => {
-            expect(new Dollar(5).equals(new Dollar(5))).toBe(true);
-            expect(new Dollar(5).equals(new Dollar(6))).toBe(false);
+            expect(Money.dollar(5).equals(Money.dollar(5))).toBe(true);
+            expect(Money.dollar(5).equals(Money.dollar(6))).toBe(false);
         });
     });
 
     describe('franc', () => {
         it('should be able to multiply a currency', () => {
-            const five = new Franc(5);
-            expect(five.times(2).equals(new Franc(10))).toBe(true);
+            const five = Money.franc(5);
+            expect(five.times(2).equals(Money.franc(10))).toBe(true);
         });
 
         it('should not change the object', () => {
-            const five = new Franc(5);
-            expect(new Franc(10).equals(five.times(2))).toBe(true);
-            expect(new Franc(15).equals(five.times(3))).toBe(true);
+            const five = Money.franc(5);
+            expect(Money.franc(10).equals(five.times(2))).toBe(true);
+            expect(Money.franc(15).equals(five.times(3))).toBe(true);
         });
 
         it('should be comparable by .equal', () => {
-            expect(new Franc(5).equals(new Franc(5))).toBe(true);
-            expect(new Franc(5).equals(new Franc(6))).toBe(false);
+            expect(Money.franc(5).equals(Money.franc(5))).toBe(true);
+            expect(Money.franc(5).equals(Money.franc(6))).toBe(false);
         });
     });
 });
