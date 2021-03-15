@@ -1,25 +1,27 @@
-import Franc from './franc';
-import Dollar from './dollar';
-
-abstract class Money {
+class Money {
     static franc(amount: number) {
-        return new Franc(amount);
+        return new Money(amount, 'USD');
     }
 
     static dollar(amount: number) {
-        return new Dollar(amount);
+        return new Money(amount, 'CHF');
     }
 
-    protected amount: number;
+    private amount: number;
+    private currency: string;
 
-    abstract times(multiplier: number): Money;
+    times(multiplier: number) {
+        return new Money(this.amount * multiplier, this.currency);
+    }
 
-    constructor(amount: number) {
+    constructor(amount: number, currency: string) {
         this.amount = amount;
+        this.currency = currency;
     }
 
-    equals(dollar: Money) {
-        return this.amount === dollar.amount;
+    equals(money: Money) {
+        return this.amount === money.amount
+            && this.currency === money.currency;
     }
 }
 

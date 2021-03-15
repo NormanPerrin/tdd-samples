@@ -10,7 +10,7 @@ describe('money exchange', () => {
         it('should not change the object', () => {
             const five = Money.dollar(5);
             expect(five.times(2).equals(Money.dollar(10))).toBe(true);
-            expect(five.times(3).equals(Money.dollar(10))).toBe(true);
+            expect(five.times(3).equals(Money.dollar(15))).toBe(true);
         });
 
         it('should be comparable by .equal', () => {
